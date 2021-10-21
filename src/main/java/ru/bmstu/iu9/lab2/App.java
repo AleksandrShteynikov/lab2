@@ -1,7 +1,7 @@
 package ru.bmstu.iu9.lab2;
 
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.mapred.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
@@ -19,6 +19,6 @@ public class App {
         job.setReducerClass(DelayReducer.class);
         job.setPartitionerClass(CustomPartitioner.class);
         job.setGroupingComparatorClass(Comparator.class);
-        
+
     }
 }
