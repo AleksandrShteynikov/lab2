@@ -1,9 +1,7 @@
 package ru.bmstu.iu9.lab2;
 
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Writable;
-import org.apache.hadoop.io.Text;
-
+import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
@@ -18,8 +16,9 @@ public class CustomWritable implements Writable {
         dataOutput.writeUTF(airportName);
     }
 
-    public void readFields(DataIn dataIn) {
-        
+    public void readFields(DataInput dataInput) throws IOException {
+        this.airportName = dataInput.readUTF();
+        this.delayTime = dataInput.readInt();
     }
 
     public String getAirportName() {
