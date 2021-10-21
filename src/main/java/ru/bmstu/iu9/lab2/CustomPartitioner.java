@@ -1,4 +1,4 @@
 package ru.bmstu.iu9.lab2;
 
-public class Partitioner extends  {
+public class CustomPartitioner extends Partitioner<> {
 }
