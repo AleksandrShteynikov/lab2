@@ -6,5 +6,5 @@ public class Comparator extends WritableComparator {
     protected Comparator() {
         super(Key.class, true);
     }
-    
+
 }
