@@ -37,6 +37,18 @@ public class Key implements WritableComparable<Key> {
 
     @Override
     public int compareTo(Key key) {
-        
+        if (this.id < key.id) {
+            return -1;
+        }
+        if (this.id > key.id) {
+            return 1;
+        }
+        if (this.dataType < key.dataType) {
+            return -1;
+        }
+        if (this.dataType > key.dataType) {
+            return 1;
+        }
+        return 0;
     }
 }
