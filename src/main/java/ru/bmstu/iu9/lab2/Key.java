@@ -53,12 +53,6 @@ public class Key implements WritableComparable<Key> {
     }
 
     public int compareFirst(Key key) {
-        if (this.id < key.id) {
-            return -1;
-        }
-        if (this.id > key.id) {
-            return 1;
-        }
-        return 0;
+        return (this.id < key.id ? -1 : (this.id > key.id ? 1 : 0));
     }
 }
