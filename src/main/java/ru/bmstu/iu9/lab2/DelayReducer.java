@@ -10,8 +10,9 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable>
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
         int max = 0, min = 0, avg = 0;
-        int 
+        int accum = 0;
         for (IntWritable val : values) {
+            accum += val;
 
         }
     }
