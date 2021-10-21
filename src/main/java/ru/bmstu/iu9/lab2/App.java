@@ -17,6 +17,6 @@ public class App {
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         job.setReducerClass(DelayReducer.class);
-        
+
     }
 }
