@@ -14,11 +14,13 @@ public class CustomWritable implements Writable {
         this.airportName = "";
     }
 
+    @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(delayTime);
         dataOutput.writeUTF(airportName);
     }
 
+    @Override
     public void readFields(DataInput dataInput) throws IOException {
         this.airportName = dataInput.readUTF();
         this.delayTime = dataInput.readInt();

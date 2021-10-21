@@ -23,15 +23,18 @@ public class Key implements WritableComparable<Key> {
         return dataType;
     }
 
+    @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(id);
         dataOutput.writeInt(dataType);
     }
 
+    @Override
     public void readFields(DataInput dataInput) throws IOException {
         this.id = dataInput.readInt();
         this.dataType = dataInput.readInt();
     }
 
-
+    @Override
+    public 
 }
