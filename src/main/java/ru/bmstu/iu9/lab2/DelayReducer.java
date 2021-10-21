@@ -4,6 +4,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
+import java.util.Iterator;
 
 public class DelayReducer extends Reducer<Text, IntWritable, Text, Text> {
     @Override
@@ -11,17 +12,19 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, Text> {
         int max = 0, min = 2147483647;
         int accum = 0;
         int count = 0;
-        
-        for (IntWritable val : values) {
-            accum += val.get();
+        String airportName;
+        Iterator<CustomWritable> itr = values.iterator();
+        airportName = itr.next().getAirportName();
+        while (itr.hasNext()) {
+            int val = itr.next().getDelayTime();
+            accum += val;
             count += 1;
-            if (val.get() > max) {
-                max = val.get();
+            if (val > max) {
+                max = val;
             }
-            if (val.get() < min) {
-                min = val.get();
+            if (val < min) {
+                min = val;
             }
-        }
         int avg = accum / count;
         context.write(key, new Text("average: " + avg + ", min: " + min + ", max: " + max));
     }
