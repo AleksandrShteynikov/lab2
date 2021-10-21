@@ -7,4 +7,8 @@ public class Comparator extends WritableComparator {
         super(Key.class, true);
     }
 
+    @Override
+    public int compare() {
+        
+    }
 }
