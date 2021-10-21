@@ -9,11 +9,13 @@ import java.io.IOException;
 public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable> {
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-        int max = 0, min = ;
+        int max = 0, min = 2147483647;
         int accum = 0;
         for (IntWritable val : values) {
             accum += val.get();
-
+            if (val.get() > max) {
+                max = val.get();
+            }
         }
     }
 }
