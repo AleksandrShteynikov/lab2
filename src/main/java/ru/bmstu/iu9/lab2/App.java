@@ -24,5 +24,6 @@ public class App {
         job.setGroupingComparatorClass(Comparator.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
