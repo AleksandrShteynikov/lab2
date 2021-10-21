@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class DelayReducer extends Reducer<Text, IntWritable, Text, Text> {
-    @Override
     protected void reduce(Text key, Iterable<CustomWritable> values, Context context) throws IOException, InterruptedException {
         int max = 0, min = 2147483647;
         int accum = 0;
