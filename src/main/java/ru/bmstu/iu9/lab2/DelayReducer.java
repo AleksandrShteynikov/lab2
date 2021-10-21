@@ -11,8 +11,10 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable>
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
         int max = 0, min = 2147483647;
         int accum = 0;
+        int count = 0;
         for (IntWritable val : values) {
             accum += val.get();
+            count += 1;
             if (val.get() > max) {
                 max = val.get();
             }
@@ -20,6 +22,7 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable>
                 min = val.get();
             }
         }
-
+        int avg = accum / count;
+        context.write(key, )
     }
 }
