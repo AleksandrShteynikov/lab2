@@ -1,4 +1,9 @@
 package ru.bmstu.iu9.lab2;
 
-public class Comparator {
+import org.apache.hadoop.io.WritableComparator;
+
+public class Comparator extends WritableComparator {
+    protected Comparator() {
+        super(Comparator.class, true)
+    }
 }
