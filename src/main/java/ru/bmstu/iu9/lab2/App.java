@@ -16,7 +16,7 @@ public class App {
         Job job = Job.getInstance();
         job.setJarByClass(App.class);
         job.setJobName("App");
-        MultipleInputs.
+        MultipleInputs.addInputPath(job, new Path(args[0], ))
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setReducerClass(DelayReducer.class);
         job.setPartitionerClass(CustomPartitioner.class);
