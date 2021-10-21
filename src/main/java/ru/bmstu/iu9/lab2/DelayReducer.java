@@ -16,6 +16,10 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable>
             if (val.get() > max) {
                 max = val.get();
             }
+            if (val.get() < min) {
+                min = val.get();
+            }
         }
+        
     }
 }
