@@ -4,9 +4,18 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.Text;
 
+import java.io.DataOutput;
+import java.io.IOException;
+
 public class CustomWritable implements Writable {
     private Text airportName;
     private IntWritable delayTime;
+
+    public CustomWritable() {}
+
+    public void write(DataOutput dataOutput) throws IOException {
+        
+    }
 
     public Text getAirportName() {
         return airportName;
@@ -23,5 +32,5 @@ public class CustomWritable implements Writable {
         this.delayTime = delayTime;
     }
 
-    
+
 }
