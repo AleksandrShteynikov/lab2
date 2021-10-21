@@ -20,6 +20,6 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable>
                 min = val.get();
             }
         }
-        
+
     }
 }
