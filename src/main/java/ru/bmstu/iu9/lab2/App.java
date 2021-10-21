@@ -1,6 +1,9 @@
 package ru.bmstu.iu9.lab2;
 
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.mapred.FileInputFormat;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,5 +14,9 @@ public class App {
         Job job = Job.getInstance();
         job.setJarByClass(App.class);
         job.setJobName("App");
+        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        job.setReducerClass(DelayReducer.class);
+        
     }
 }
