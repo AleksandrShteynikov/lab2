@@ -10,6 +10,8 @@ public class Key implements WritableComparable<Key> {
     private int id;
     private int dataType;
 
+    public Key() {}
+
     public int getId() {
         return id;
     }
@@ -28,5 +30,5 @@ public class Key implements WritableComparable<Key> {
         this.dataType = dataInput.readInt();
     }
 
-    
+
 }
