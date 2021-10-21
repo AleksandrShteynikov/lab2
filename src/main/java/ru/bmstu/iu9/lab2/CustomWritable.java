@@ -1,4 +1,4 @@
 package ru.bmstu.iu9.lab2;
 
-public class CustomWritable {
+public class CustomWritable  {
 }
