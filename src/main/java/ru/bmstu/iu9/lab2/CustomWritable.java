@@ -9,7 +9,10 @@ public class CustomWritable implements Writable {
     private String airportName;
     private int delayTime;
 
-    public CustomWritable() {}
+    public CustomWritable() {
+        this.delayTime = 0;
+        this.airportName = "";
+    }
 
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(delayTime);
