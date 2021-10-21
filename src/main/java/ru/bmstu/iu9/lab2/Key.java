@@ -36,5 +36,7 @@ public class Key implements WritableComparable<Key> {
     }
 
     @Override
-    public 
+    public int compareTo(Key key) {
+        
+    }
 }
