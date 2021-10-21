@@ -4,6 +4,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class App {
@@ -15,8 +16,8 @@ public class App {
         Job job = Job.getInstance();
         job.setJarByClass(App.class);
         job.setJobName("App");
-        FileInputFormat.addInputPath(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        MultipleInputs.
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setReducerClass(DelayReducer.class);
         job.setPartitionerClass(CustomPartitioner.class);
         job.setGroupingComparatorClass(Comparator.class);
