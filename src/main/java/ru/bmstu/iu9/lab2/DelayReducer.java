@@ -25,7 +25,8 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, Text> {
             if (val < min) {
                 min = val;
             }
+        }
         int avg = accum / count;
-        context.write(key, new Text("average: " + avg + ", min: " + min + ", max: " + max));
+        context.write(new Text(airportName), new Text("average: " + avg + ", min: " + min + ", max: " + max));
     }
 }
