@@ -23,6 +23,6 @@ public class DelayReducer extends Reducer<Text, IntWritable, Text, LongWritable>
             }
         }
         int avg = accum / count;
-        context.write(key, )
+        context.write(key, new LongWritable());
     }
 }
