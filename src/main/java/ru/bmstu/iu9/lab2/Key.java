@@ -13,7 +13,7 @@ public class Key implements WritableComparable<Key> {
     public Key() {}
 
     public Key(int id, int dataType) {
-        //super();
+        super();
         this.id = id;
         this.dataType = dataType;
     }
