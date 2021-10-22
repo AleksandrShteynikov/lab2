@@ -18,7 +18,6 @@ public class AirportMapper extends Mapper<LongWritable, Text, Key, CustomWritabl
             CustomWritable val = new CustomWritable();
             val.setAirportName(airport[1]);
             Key k = new Key(Integer.parseInt(airport[0]), 0);
-            System.out.println(k.getId());
             context.write(k, val);
         }
     }
