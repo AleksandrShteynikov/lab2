@@ -20,10 +20,6 @@ public class Key implements WritableComparable<Key> {
         return id;
     }
 
-    public int getDataType() {
-        return dataType;
-    }
-
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeInt(id);
