@@ -14,7 +14,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, Key, CustomWritable
             if (!flight[17].equals("") && Float.parseFloat(flight[17]) > 0) {
                 Key k = new Key(Integer.parseInt(flight[14]), 1);
                 CustomWritable val = new CustomWritable();
-                val.setAirportName(flight[14]);
+                //val.setAirportName(flight[14]);
                 val.setDelayTime((int) Float.parseFloat(flight[17]));
                 context.write(k, val);
             }
