@@ -14,7 +14,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Key, CustomWritabl
             airport[1] = StringUtils.strip(airport[0], "\"");
             CustomWritable val = new CustomWritable();
             val.setAirportName(airport[1]);
-            Key k = 
+            Key k = new Key()
         }
     }
 }
