@@ -11,6 +11,7 @@ public class Key implements WritableComparable<Key> {
     private int dataType;
 
     public Key(int id, int dataType) {
+        super();
         this.id = id;
         this.dataType = dataType;
     }
