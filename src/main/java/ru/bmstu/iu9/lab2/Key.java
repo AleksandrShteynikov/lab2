@@ -57,6 +57,6 @@ public class Key implements WritableComparable<Key> {
     }
 
     public int hashCode() {
-        
+        id.hashCode()
     }
 }
