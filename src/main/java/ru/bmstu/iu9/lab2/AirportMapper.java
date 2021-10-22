@@ -9,7 +9,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, Key, CustomWritabl
     @Override
     protected void map(LongWritable key, Text value, Context context) {
         if (key.get() != 0) {
-            String[] airport = Text. StringUtils.strip()
+            String[] airport = value.toString().split(",", 2);
+            
         }
     }
 }
