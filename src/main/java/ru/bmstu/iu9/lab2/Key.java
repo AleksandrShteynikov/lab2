@@ -9,6 +9,8 @@ import java.io.IOException;
 public class Key implements WritableComparable<Key> {
     private int id;
     private int dataType;
+    
+    public Key() {}
 
     public Key(int id, int dataType) {
         super();
