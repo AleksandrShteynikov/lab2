@@ -11,7 +11,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, Key, CustomWritable
         if (key.get() != 0) {
             final String separator = ",";
             String[] flight = value.toString().split(separator, -1);
-            if 
+            if (flight[] != "" && Float.parseFloat(flight[]) > 0)
         }
     }
 }
