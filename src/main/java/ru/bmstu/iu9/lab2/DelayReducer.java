@@ -30,7 +30,7 @@ public class DelayReducer extends Reducer<Key, CustomWritable, Text, Text> {
         if (count != 0) {
             System.out.println(key.getDataType());
             int avg = accum / count;
-            context.write(new Text(String.valueOf(key)), new Text("average: " + avg + ", min: " + min + ", max: " + max));
+            context.write(new Text(key.getId()), new Text("average: " + avg + ", min: " + min + ", max: " + max));
         }
     }
 }
