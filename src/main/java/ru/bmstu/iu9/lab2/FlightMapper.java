@@ -16,7 +16,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, Key, CustomWritable
                 CustomWritable val = new CustomWritable();
                 val.setAirportName(flight[14]);
                 val.setDelayTime((int) Float.parseFloat(flight[17]));
-                System.out.println(k.getDataType());
+                System.out.println(val.getDelayTime());
                 context.write(k, val);
             }
         }
