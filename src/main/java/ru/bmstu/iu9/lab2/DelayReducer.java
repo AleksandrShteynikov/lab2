@@ -10,7 +10,6 @@ public class DelayReducer extends Reducer<Key, CustomWritable, Text, Text> {
     @Override
     protected void reduce(Key key, Iterable<CustomWritable> values, Context context) throws IOException, InterruptedException {
         //int max = 0, min = 2147483647;
-        System.out.println(key.getId());
         int max = 0, min = 1000;
         int accum = 0;
         int count = 0;
@@ -29,6 +28,7 @@ public class DelayReducer extends Reducer<Key, CustomWritable, Text, Text> {
             }
         }
         if (count != 0) {
+            System.out.println(key.getId());
             int avg = accum / count;
             context.write(new Text(String.valueOf(key)), new Text("average: " + avg + ", min: " + min + ", max: " + max));
         }
