@@ -26,6 +26,7 @@ public class App {
         job.setGroupingComparatorClass(Comparator.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
+        job.setNumReduceTasks(2);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
