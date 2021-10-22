@@ -16,6 +16,7 @@ public class DelayReducer extends Reducer<Key, CustomWritable, Text, Text> {
         String airportName;
         Iterator<CustomWritable> itr = values.iterator();
         airportName = itr.next().getAirportName();
+        System.out.println(airportName);
         while (itr.hasNext()) {
             int val = itr.next().getDelayTime();
             accum += val;
@@ -28,7 +29,6 @@ public class DelayReducer extends Reducer<Key, CustomWritable, Text, Text> {
             }
         }
         if (count != 0) {
-            //System.out.println(key.getDataType());
             int avg = accum / count;
             context.write(new Text(String.valueOf(key.getId())), new Text("average: " + avg + ", min: " + min + ", max: " + max));
         }
