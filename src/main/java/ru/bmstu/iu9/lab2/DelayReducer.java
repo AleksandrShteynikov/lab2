@@ -16,7 +16,9 @@ public class DelayReducer extends Reducer<Key, CustomWritable, Text, Text> {
         String airportName;
         Iterator<CustomWritable> itr = values.iterator();
         airportName = itr.next().getAirportName();
-        System.out.println(airportName);
+        for (CustomWritable val : values) {
+            System.out.println(val.getAirportName());
+        }
         while (itr.hasNext()) {
             int val = itr.next().getDelayTime();
             accum += val;
