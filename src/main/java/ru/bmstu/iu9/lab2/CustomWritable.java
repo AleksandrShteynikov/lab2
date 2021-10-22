@@ -41,6 +41,4 @@ public class CustomWritable implements Writable {
     public void setDelayTime(int delayTime) {
         this.delayTime = delayTime;
     }
-
-
 }
