@@ -55,4 +55,8 @@ public class Key implements WritableComparable<Key> {
     public int compareFirst(Key key) {
         return (this.id < key.id ? -1 : (this.id > key.id ? 1 : 0));
     }
+
+    public int hashCode() {
+        
+    }
 }
