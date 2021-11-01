@@ -10,6 +10,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Key, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() != 0) {
+//comment
             final String separator = ",";
             final String trimmer = "\"";
             String[] airport = value.toString().split(separator, 2);
